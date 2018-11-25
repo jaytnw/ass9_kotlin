@@ -12,9 +12,7 @@ class Student(val Username: String, val Password: String , val Birthday: String,
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
-    ) {
-    }
-
+    )
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(Username)
         parcel.writeString(Password)
@@ -22,18 +20,14 @@ class Student(val Username: String, val Password: String , val Birthday: String,
         parcel.writeString(Gender)
         parcel.writeString(Email)
         parcel.writeString(Phone)
-
     }
-
     override fun describeContents(): Int {
         return 0
     }
-
     companion object CREATOR : Parcelable.Creator<Student> {
         override fun createFromParcel(parcel: Parcel): Student {
             return Student(parcel)
         }
-
         override fun newArray(size: Int): Array<Student?> {
             return arrayOfNulls(size)
         }
